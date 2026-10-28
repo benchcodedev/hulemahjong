@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
+
+@layer components {
+  .pill-select {
+    @apply w-full h-[46px] rounded-full border border-[#e5e5e5] bg-white px-5 pr-11 text-[13.5px] font-medium text-[#181818] transition duration-150 focus:border-[#c3b091] focus:outline-none focus:ring-2 focus:ring-[#c3b091]/25 appearance-none cursor-pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23555555' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 18px center;
+  }
+
+  .cms-input {
+    @apply w-full rounded-xl border border-stone-200 bg-white px-3.5 py-2.5 text-sm text-stone-900 placeholder-stone-400 transition focus:border-[#c3b091] focus:outline-none focus:ring-2 focus:ring-[#c3b091]/25;
+  }
+
+  .cms-label {
+    @apply block text-xs font-semibold uppercase tracking-wider text-stone-600 mb-1.5;
+  }
+}
+
+@media print {
+  @page {
+    margin: 8mm 10mm;
+  }
+
+  html, body, #root, .print-root-wrapper {
+    background: #ffffff !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .print-only-sheet {
+    display: block !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    page-break-after: avoid !important;
+    break-after: avoid !important;
+  }
+}
